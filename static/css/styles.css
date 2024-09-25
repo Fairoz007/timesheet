@@ -1,0 +1,299 @@
+/* Global Variables for Dark Theme */
+:root {
+    --primary-color: rgb(0, 123, 255); /* Bright blue for primary actions */
+    --primary-hover-color: rgb(0, 86, 179); /* Slightly darker blue for hover */
+    --secondary-color: rgb(33, 37, 41); /* Very dark gray for text and secondary elements */
+    --accent-color: rgb(255, 193, 7); /* Bright yellow for accents */
+    --bg-light-color: rgb(52, 58, 64); /* Dark gray for main content areas */
+    --bg-sidebar-color: rgb(33, 37, 41); /* Darker gray for sidebar */
+    --font-color: rgb(255, 255, 255); /* White for primary font color */
+    --font-light-color: rgb(204, 204, 204); /* Light gray for secondary text */
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Stronger shadow for contrast */
+    --transition-time: 0.3s ease;
+    --font-family: 'Arial', sans-serif;
+}
+
+/* The rest of your CSS can remain the same, as they refer to these variables. 
+   Only the values of the variables are changed to suit the dark theme. */
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+    background-color: var(--bg-sidebar-color); /* Light page background */
+    color: var(--font-color);
+}
+
+.wrapper {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: var(--bg-sidebar-color); /* Light sidebar background */
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.sidebar h2 {
+    margin-bottom: 20px;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--secondary-color); /* Dark blue for sidebar headings */
+}
+
+.weekly-hours h3 {
+    margin-top: 40px;
+    font-size: 18px;
+    color: var(--font-light-color); /* Lighter blue font for subheadings */
+}
+
+.weekly-hours #totalHours {
+    font-size: 20px;
+    color: var(--font-color); /* Dark font for hours text */
+    margin-top: 10px;
+}
+
+/* Main Content */
+.content {
+    flex: 1;
+    padding: 40px;
+    background-color: var(--bg-light-color); /* Light soft blue/gray background */
+    overflow-y: auto;
+}
+
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.content-header h1 {
+    margin: 0;
+    font-size: 28px;
+    color: var(--primary-color); /* Primary blue color for main headings */
+    font-weight: 700;
+}
+
+/* Buttons */
+.btn, .btn1, .btn2 {
+    background-color: var(--primary-color); /* Primary blue button */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 12px 24px;
+    text-align: center;
+    transition: background-color var(--transition-time);
+}
+
+.btn:hover, .btn1:hover, .btn2:hover {
+    background-color: var(--primary-hover-color); /* Darker blue on hover */
+}
+
+/* Specific Button Styling */
+.btn1, .btn2 {
+    font-size: 25px;
+    width: 75%;
+    margin-top: 40px;
+}
+
+.btn2 {
+    margin-top: 10px;
+}
+
+/* Timesheets Section */
+.timesheets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Timesheet Cards */
+.timesheet-card {
+    background-color: var(--bg-light-color); /* Light card background */
+    padding: 20px;
+    border-radius: 10px;
+    width: calc(33.333% - 20px);
+    box-shadow: var(--box-shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    max-height: calc(100vh - 60px); /* Adjust max height dynamically */
+}
+
+.timesheet-card:hover {
+    transform: translateY(-5px); /* Subtle lift effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.timesheet-card h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: var(--font-color); /* Dark font color */
+    font-weight: bold;
+}
+
+.timesheet-card p {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: var(--font-light-color); /* Lighter font color */
+    line-height: 1.5;
+}
+
+.timesheet-card .time {
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--font-color); /* Dark font color */
+    margin-top: 10px;
+}
+
+.timesheet-card .controls {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* Control buttons styling */
+.timesheet-card .controls button {
+    background-color: var(--primary-color); /* Primary blue for buttons */
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color var(--transition-time);
+}
+
+.timesheet-card .controls button:hover {
+    background-color: var(--primary-hover-color); /* Darker blue on hover */
+}
+
+.timesheet-card .controls button.pause {
+    background-color: var(--accent-color); /* Darker blue for pause button */
+}
+
+.timesheet-card .controls button.pause:hover {
+    background-color: #002b4d; /* Darker accent blue on hover */
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background-color: var(--bg-sidebar-color); /* Light background for modal */
+    padding: 20px;
+    width: 400px;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    position: relative;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    font-size: 22px;
+    color: var(--font-color); /* Dark font color */
+}
+
+/* Input Group */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: var(--font-light-color); /* Light label color */
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    color: var(--font-color); /* Dark font color */
+    background-color: #ffffff; /* White input background */
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+/* Save Button */
+.btn-save {
+    background-color: var(--primary-color); /* Primary blue button */
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color var(--transition-time);
+    text-align: center;
+}
+
+.btn-save:hover {
+    background-color: var(--primary-hover-color); /* Darker blue on hover */
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #aaa;
+    transition: color var(--transition-time);
+}
+
+.close-button:hover {
+    color: #888;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .wrapper {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 10px;
+        box-shadow: none;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    .timesheet-card {
+        width: 100%;
+    }
+}
